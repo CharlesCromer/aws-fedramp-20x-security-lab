@@ -1,0 +1,60 @@
+**********************
+PowerShell transcript start
+Start time: 20261004121010
+Username: DESKTOP-08FQ8D1\charl
+RunAs User: DESKTOP-08FQ8D1\charl
+Configuration Name: 
+Machine: DESKTOP-08FQ8D1 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Users\charl\AppData\Local\Programs\Microsoft VS Code\04c0d99f4f\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 11056
+PSVersion: 7.6.6
+PSEdition: Core
+GitCommitId: 7.6.6
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is D:\Terraform\Project-Evidence\aws-fedramp-20x-security-lab\phase-01-terraform\command-output\terraform-apply-change.txt
+]633;D;0]633;A]633;P;Cwd=D:\x5cTerraform\x5cProjects\x5cphase1-capstonePS D:\Terraform\Projects\phase1-capstone> ]633;B
+PS>terraform apply
+      ~ tags                                 = {
+            "Environment" = "dev"
+            "ManagedBy"   = "Terraform"
+          ~ "Name"        = "phase1-capstone-ec2" -> "phase1-capstone-ec2-updated"
+            "Project"     = "phase1-capstone"
+        }
+      ~ tags_all                             = {
+          ~ "Name"        = "phase1-capstone-ec2" -> "phase1-capstone-ec2-updated"
+            # (3 unchanged elements hidden)
+        }
+        # (39 unchanged attributes hidden)
+
+        # (9 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+module.ec2.aws_instance.this: Modifying... [id=i-0efbabf50076a7b9b]
+module.ec2.aws_instance.this: Modifications complete after 1s [id=i-0efbabf50076a7b9b]
+
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+Outputs:
+
+instance_id = "i-0efbabf50076a7b9b"
+private_ip = "10.20.1.109"
+]633;D;0]633;A]633;P;Cwd=D:\x5cTerraform\x5cProjects\x5cphase1-capstonePS D:\Terraform\Projects\phase1-capstone> ]633;B
+PS>Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20261004121315
+**********************

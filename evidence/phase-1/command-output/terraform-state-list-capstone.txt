@@ -1,0 +1,4 @@
+aws_security_group.ec2
+aws_subnet.private
+aws_vpc.main
+module.ec2.aws_instance.this

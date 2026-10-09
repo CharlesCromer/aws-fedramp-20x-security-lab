@@ -1,0 +1,2 @@
+instance_id = "i-0efbabf50076a7b9b"
+private_ip = "10.20.1.109"
