@@ -1,0 +1,13 @@
+data.aws_availability_zones.available: Reading...
+aws_vpc.main: Refreshing state... [id=vpc-082fe7b98067401d7]
+data.aws_availability_zones.available: Read complete after 0s [id=us-east-1]
+aws_route_table.private: Refreshing state... [id=rtb-064193242a637c218]
+aws_subnet.private_b: Refreshing state... [id=subnet-0bb614a72b8c7f458]
+aws_subnet.private_a: Refreshing state... [id=subnet-0039527c8b795d6e0]
+aws_route_table_association.private_b: Refreshing state... [id=rtbassoc-0fb93dc4cfa804740]
+aws_route_table_association.private_a: Refreshing state... [id=rtbassoc-00e74fc9b7ec37ae3]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
