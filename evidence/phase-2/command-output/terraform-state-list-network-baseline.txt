@@ -1,0 +1,7 @@
+data.aws_availability_zones.available
+aws_route_table.private
+aws_route_table_association.private_a
+aws_route_table_association.private_b
+aws_subnet.private_a
+aws_subnet.private_b
+aws_vpc.main

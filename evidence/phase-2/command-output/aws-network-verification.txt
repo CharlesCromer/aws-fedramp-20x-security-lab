@@ -1,0 +1,104 @@
+=== Phase 2 AWS Network Verification ===
+
+=== VPC ===
+{
+    "VpcId": "vpc-082fe7b98067401d7",
+    "CidrBlock": "10.30.0.0/16",
+    "State": "available",
+    "IsDefault": false,
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "aws-fedramp-20x-security-lab-lab-vpc"
+        },
+        {
+            "Key": "ManagedBy",
+            "Value": "Terraform"
+        },
+        {
+            "Key": "Project",
+            "Value": "aws-fedramp-20x-security-lab"
+        },
+        {
+            "Key": "Purpose",
+            "Value": "FedRAMP-20x-Security-Lab"
+        },
+        {
+            "Key": "Environment",
+            "Value": "lab"
+        }
+    ]
+}
+
+=== VPC DNS Support ===
+{
+    "EnableDnsSupport": {
+        "Value": true
+    },
+    "VpcId": "vpc-082fe7b98067401d7"
+}
+
+=== VPC DNS Hostnames ===
+{
+    "EnableDnsHostnames": {
+        "Value": true
+    },
+    "VpcId": "vpc-082fe7b98067401d7"
+}
+
+=== Private Subnets ===
+[
+    {
+        "SubnetId": "subnet-0039527c8b795d6e0",
+        "Cidr": "10.30.10.0/24",
+        "AZ": "us-east-1a",
+        "MapPublicIp": false,
+        "VpcId": "vpc-082fe7b98067401d7",
+        "State": "available"
+    },
+    {
+        "SubnetId": "subnet-0bb614a72b8c7f458",
+        "Cidr": "10.30.20.0/24",
+        "AZ": "us-east-1b",
+        "MapPublicIp": false,
+        "VpcId": "vpc-082fe7b98067401d7",
+        "State": "available"
+    }
+]
+
+=== Private Route Table ===
+{
+    "RouteTableId": "rtb-064193242a637c218",
+    "VpcId": "vpc-082fe7b98067401d7",
+    "Routes": [
+        {
+            "DestinationCidrBlock": "10.30.0.0/16",
+            "GatewayId": "local",
+            "Origin": "CreateRouteTable",
+            "State": "active"
+        }
+    ],
+    "Associations": [
+        {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-00e74fc9b7ec37ae3",
+            "RouteTableId": "rtb-064193242a637c218",
+            "SubnetId": "subnet-0039527c8b795d6e0",
+            "AssociationState": {
+                "State": "associated"
+            }
+        },
+        {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-0fb93dc4cfa804740",
+            "RouteTableId": "rtb-064193242a637c218",
+            "SubnetId": "subnet-0bb614a72b8c7f458",
+            "AssociationState": {
+                "State": "associated"
+            }
+        }
+    ]
+}
+
+=== Internet Gateways Attached to VPC ===
+[]

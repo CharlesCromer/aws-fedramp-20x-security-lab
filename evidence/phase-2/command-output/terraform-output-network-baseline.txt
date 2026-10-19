@@ -1,0 +1,10 @@
+private_route_table_id = "rtb-064193242a637c218"
+private_subnet_availability_zones = [
+  "us-east-1a",
+  "us-east-1b",
+]
+private_subnet_ids = [
+  "subnet-0039527c8b795d6e0",
+  "subnet-0bb614a72b8c7f458",
+]
+vpc_id = "vpc-082fe7b98067401d7"

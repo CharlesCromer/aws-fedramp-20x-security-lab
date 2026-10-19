@@ -1,0 +1,27 @@
+aws_vpc.main: Creating...
+aws_vpc.main: Creation complete after 2s [id=vpc-082fe7b98067401d7]
+aws_route_table.private: Creating...
+aws_subnet.private_b: Creating...
+aws_subnet.private_a: Creating...
+aws_route_table.private: Creation complete after 1s [id=rtb-064193242a637c218]
+aws_subnet.private_b: Creation complete after 1s [id=subnet-0bb614a72b8c7f458]
+aws_subnet.private_a: Creation complete after 1s [id=subnet-0039527c8b795d6e0]
+aws_route_table_association.private_b: Creating...
+aws_route_table_association.private_a: Creating...
+aws_route_table_association.private_b: Creation complete after 0s [id=rtbassoc-0fb93dc4cfa804740]
+aws_route_table_association.private_a: Creation complete after 0s [id=rtbassoc-00e74fc9b7ec37ae3]
+
+Apply complete! Resources: 6 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+private_route_table_id = "rtb-064193242a637c218"
+private_subnet_availability_zones = [
+  "us-east-1a",
+  "us-east-1b",
+]
+private_subnet_ids = [
+  "subnet-0039527c8b795d6e0",
+  "subnet-0bb614a72b8c7f458",
+]
+vpc_id = "vpc-082fe7b98067401d7"
