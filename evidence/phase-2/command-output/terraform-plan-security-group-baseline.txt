@@ -1,0 +1,36 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_security_group.private_workload will be created
+  + resource "aws_security_group" "private_workload" {
+      + arn                    = (known after apply)
+      + description            = "Default-deny security group for private lab workloads"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "aws-fedramp-20x-security-lab-lab-private-workload-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "aws-fedramp-20x-security-lab-lab-private-workload-sg"
+        }
+      + tags_all               = {
+          + "Environment" = "lab"
+          + "ManagedBy"   = "Terraform"
+          + "Name"        = "aws-fedramp-20x-security-lab-lab-private-workload-sg"
+          + "Project"     = "aws-fedramp-20x-security-lab"
+          + "Purpose"     = "FedRAMP-20x-Security-Lab"
+        }
+      + vpc_id                 = "vpc-082fe7b98067401d7"
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + private_workload_security_group_id = (known after apply)

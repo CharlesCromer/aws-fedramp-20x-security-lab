@@ -11,6 +11,18 @@ A hands-on cloud security engineering and compliance portfolio project combining
 - Machine-readable security evidence
 - Cross-framework security control traceability
 
+## Security Engineering Principles
+
+The project uses a default-deny approach for workload network access.
+
+Private workload security groups begin with no ingress or egress rules. Required
+connectivity is introduced explicitly through Terraform only when a documented
+workload dependency requires it.
+
+This avoids treating unrestricted outbound access as an assumed default and
+keeps network-access decisions reviewable through Infrastructure as Code, Git
+history, and security evidence.
+
 ## Primary Framework Alignment
 
 The project primarily demonstrates alignment to:

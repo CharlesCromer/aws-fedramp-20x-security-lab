@@ -139,3 +139,44 @@ Technical capability
 
 This is intended to demonstrate both technical implementation and
 cross-framework GRC traceability.
+
+---
+
+## Decision 009 — Default-Deny Workload Security Groups
+
+**Status:** Accepted
+
+Private workload security groups will use a default-deny starting configuration.
+
+The initial workload security group will contain no ingress rules and no egress
+rules. Required network connectivity will be added only when a documented
+workload dependency justifies the access.
+
+This approach intentionally avoids treating unrestricted outbound connectivity
+as an assumed requirement. Instead, network access must be introduced
+deliberately through Terraform and reviewed as part of the infrastructure
+change process.
+
+The decision supports the project's least-privilege and controlled-connectivity
+objectives by:
+
+- Preventing unnecessary inbound exposure.
+- Preventing unrestricted outbound connectivity from becoming an implicit
+  default.
+- Requiring future network access to be justified by an actual workload
+  dependency.
+- Keeping network-policy changes visible in Terraform plans and Git history.
+- Producing evidence showing when and why connectivity is introduced.
+
+The operational consequence is that workloads attached to this security group
+will not have network connectivity until the required ingress or egress rules
+are explicitly defined.
+
+This restriction is intentional. Future connectivity will be added narrowly
+based on documented application or service requirements rather than by enabling
+broad default access.
+
+This design decision represents the project's implementation of least-privilege
+and controlled-network-access principles. It should not be interpreted as a
+claim that FedRAMP specifically requires security groups to contain zero
+outbound rules.

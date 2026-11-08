@@ -1,0 +1,29 @@
+{
+    "GroupId": "sg-0f9e8a7c78ea1b8a3",
+    "GroupName": "aws-fedramp-20x-security-lab-lab-private-workload-sg",
+    "VpcId": "vpc-082fe7b98067401d7",
+    "Ingress": [],
+    "Egress": [],
+    "Tags": [
+        {
+            "Key": "Purpose",
+            "Value": "FedRAMP-20x-Security-Lab"
+        },
+        {
+            "Key": "Project",
+            "Value": "aws-fedramp-20x-security-lab"
+        },
+        {
+            "Key": "ManagedBy",
+            "Value": "Terraform"
+        },
+        {
+            "Key": "Environment",
+            "Value": "lab"
+        },
+        {
+            "Key": "Name",
+            "Value": "aws-fedramp-20x-security-lab-lab-private-workload-sg"
+        }
+    ]
+}

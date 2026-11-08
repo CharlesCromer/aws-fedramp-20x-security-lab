@@ -23,3 +23,8 @@ output "private_route_table_id" {
   description = "ID of the route table associated with the private subnets."
   value       = aws_route_table.private.id
 }
+
+output "private_workload_security_group_id" {
+  description = "ID of the default-deny security group for private workloads"
+  value       = aws_security_group.private_workload.id
+}

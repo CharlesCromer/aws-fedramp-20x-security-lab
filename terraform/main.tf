@@ -67,3 +67,16 @@ resource "aws_route_table_association" "private_b" {
   subnet_id      = aws_subnet.private_b.id
   route_table_id = aws_route_table.private.id
 }
+
+# Default-deny workload security group.
+# No ingress or egress is permitted by default. Required connectivity
+# will be added explicitly as documented workload dependencies are introduced.
+resource "aws_security_group" "private_workload" {
+  name        = "${var.project_name}-${var.environment}-private-workload-sg"
+  description = "Default-deny security group for private lab workloads"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    Name = "${var.project_name}-${var.environment}-private-workload-sg"
+  }
+}

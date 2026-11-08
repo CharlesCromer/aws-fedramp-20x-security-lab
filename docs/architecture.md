@@ -11,6 +11,20 @@ The project will evolve incrementally. Infrastructure will first be defined
 with Terraform, followed by automated policy validation, CI/CD integration,
 evidence generation, and security-framework mapping.
 
+## Network Security Architecture
+
+Private workloads use Terraform-managed security groups with a default-deny
+baseline.
+
+The initial private workload security group contains no ingress rules and no
+egress rules. Network access is not enabled by default. Required connectivity
+will be introduced explicitly as workload dependencies are identified and
+documented.
+
+This design establishes a controlled starting point for workload communication
+and ensures that future network paths are deliberate, reviewable, and managed
+through Infrastructure as Code.
+
 ## Development Toolchain
 
 The primary development workflow is:
