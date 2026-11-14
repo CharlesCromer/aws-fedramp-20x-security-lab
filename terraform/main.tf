@@ -80,3 +80,53 @@ resource "aws_security_group" "private_workload" {
     Name = "${var.project_name}-${var.environment}-private-workload-sg"
   }
 }
+
+# Default-deny workload IAM identity.
+# The role trusts only Amazon EC2 and begins with no identity-based
+# permissions. AWS service access will be added only when a documented
+# workload dependency requires it.
+data "aws_iam_policy_document" "ec2_workload_assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+resource "aws_iam_role" "private_workload" {
+  name               = "${var.project_name}-${var.environment}-private-workload-role"
+  description        = "Default-deny IAM role for private lab workloads"
+  assume_role_policy = data.aws_iam_policy_document.ec2_workload_assume_role.json
+
+  tags = {
+    Name = "${var.project_name}-${var.environment}-private-workload-role"
+  }
+}
+
+# Explicitly manage the workload role's authorized managed-policy set as empty.
+# Any out-of-band managed policy attachment will be reconciled on a future apply.
+resource "aws_iam_role_policy_attachments_exclusive" "private_workload" {
+  role_name   = aws_iam_role.private_workload.name
+  policy_arns = []
+}
+
+# Explicitly manage the workload role's authorized inline-policy set as empty.
+# Any out-of-band inline policy will be reconciled on a future apply.
+resource "aws_iam_role_policies_exclusive" "private_workload" {
+  role_name    = aws_iam_role.private_workload.name
+  policy_names = []
+}
+
+resource "aws_iam_instance_profile" "private_workload" {
+  name = "${var.project_name}-${var.environment}-private-workload-profile"
+  role = aws_iam_role.private_workload.name
+
+  tags = {
+    Name = "${var.project_name}-${var.environment}-private-workload-profile"
+  }
+}

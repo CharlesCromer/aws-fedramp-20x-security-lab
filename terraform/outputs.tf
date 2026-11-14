@@ -28,3 +28,13 @@ output "private_workload_security_group_id" {
   description = "ID of the default-deny security group for private workloads"
   value       = aws_security_group.private_workload.id
 }
+
+output "private_workload_iam_role_name" {
+  description = "Name of the default-deny IAM role for private workloads"
+  value       = aws_iam_role.private_workload.name
+}
+
+output "private_workload_instance_profile_name" {
+  description = "Name of the IAM instance profile for private workloads"
+  value       = aws_iam_instance_profile.private_workload.name
+}

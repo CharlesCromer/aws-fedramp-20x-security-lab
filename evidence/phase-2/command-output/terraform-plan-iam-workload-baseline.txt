@@ -1,0 +1,87 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_instance_profile.private_workload will be created
+  + resource "aws_iam_instance_profile" "private_workload" {
+      + arn         = (known after apply)
+      + create_date = (known after apply)
+      + id          = (known after apply)
+      + name        = "aws-fedramp-20x-security-lab-lab-private-workload-profile"
+      + name_prefix = (known after apply)
+      + path        = "/"
+      + role        = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+      + tags        = {
+          + "Name" = "aws-fedramp-20x-security-lab-lab-private-workload-profile"
+        }
+      + tags_all    = {
+          + "Environment" = "lab"
+          + "ManagedBy"   = "Terraform"
+          + "Name"        = "aws-fedramp-20x-security-lab-lab-private-workload-profile"
+          + "Project"     = "aws-fedramp-20x-security-lab"
+          + "Purpose"     = "FedRAMP-20x-Security-Lab"
+        }
+      + unique_id   = (known after apply)
+    }
+
+  # aws_iam_role.private_workload will be created
+  + resource "aws_iam_role" "private_workload" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "Default-deny IAM role for private lab workloads"
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "Name" = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+        }
+      + tags_all              = {
+          + "Environment" = "lab"
+          + "ManagedBy"   = "Terraform"
+          + "Name"        = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+          + "Project"     = "aws-fedramp-20x-security-lab"
+          + "Purpose"     = "FedRAMP-20x-Security-Lab"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policies_exclusive.private_workload will be created
+  + resource "aws_iam_role_policies_exclusive" "private_workload" {
+      + policy_names = []
+      + role_name    = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+    }
+
+  # aws_iam_role_policy_attachments_exclusive.private_workload will be created
+  + resource "aws_iam_role_policy_attachments_exclusive" "private_workload" {
+      + policy_arns = []
+      + role_name   = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + private_workload_iam_role_name         = "aws-fedramp-20x-security-lab-lab-private-workload-role"
+  + private_workload_instance_profile_name = "aws-fedramp-20x-security-lab-lab-private-workload-profile"

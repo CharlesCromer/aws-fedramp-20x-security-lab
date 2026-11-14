@@ -180,3 +180,39 @@ This design decision represents the project's implementation of least-privilege
 and controlled-network-access principles. It should not be interpreted as a
 claim that FedRAMP specifically requires security groups to contain zero
 outbound rules.
+
+---
+
+## Decision 010 — Default-Deny Workload IAM Identity
+
+**Status:** Accepted
+
+Workload IAM identities will begin with no identity-based permissions attached.
+
+The initial EC2 workload IAM role will trust only the Amazon EC2 service through
+`sts:AssumeRole`. The role will not initially have managed policies or inline
+policies granting access to AWS services or resources.
+
+An IAM instance profile will be created to make the role available for future
+EC2 workloads, but the creation of an identity does not by itself justify
+granting that identity access.
+
+Required permissions will be introduced only when a documented workload
+dependency identifies a specific AWS service, action, and resource that the
+workload must access.
+
+This approach supports least privilege by:
+
+- Separating workload identity from workload authorization.
+- Avoiding broad permissions based on assumed future requirements.
+- Requiring future permissions to be justified by an actual workload dependency.
+- Making permission additions visible in Terraform plans and Git history.
+- Allowing IAM changes to be independently verified and captured as security
+  evidence.
+
+The operational consequence is that a future EC2 instance using this role will
+have an AWS identity but will not initially receive identity-based permissions
+to access AWS services or resources.
+
+This restriction is intentional. Permissions will be added narrowly as
+documented workload requirements are introduced.

@@ -1,0 +1,32 @@
+=== IAM ROLE AND TRUST POLICY ===
+{
+    "RoleName": "aws-fedramp-20x-security-lab-lab-private-workload-role",
+    "Description": "Default-deny IAM role for private lab workloads",
+    "TrustPolicy": {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": "ec2.amazonaws.com"
+                },
+                "Action": "sts:AssumeRole"
+            }
+        ]
+    }
+}
+=== ATTACHED MANAGED POLICIES ===
+{
+    "AttachedPolicies": []
+}
+=== INLINE POLICIES ===
+{
+    "PolicyNames": []
+}
+=== INSTANCE PROFILE ===
+{
+    "InstanceProfileName": "aws-fedramp-20x-security-lab-lab-private-workload-profile",
+    "Roles": [
+        "aws-fedramp-20x-security-lab-lab-private-workload-role"
+    ]
+}

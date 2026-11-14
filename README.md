@@ -23,6 +23,10 @@ This avoids treating unrestricted outbound access as an assumed default and
 keeps network-access decisions reviewable through Infrastructure as Code, Git
 history, and security evidence.
 
+Workload identity follows the same principle. IAM roles are created without
+identity-based permissions by default, and AWS service access is introduced
+only when a documented workload dependency justifies it.
+
 ## Primary Framework Alignment
 
 The project primarily demonstrates alignment to:

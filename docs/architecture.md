@@ -25,6 +25,20 @@ This design establishes a controlled starting point for workload communication
 and ensures that future network paths are deliberate, reviewable, and managed
 through Infrastructure as Code.
 
+## Workload Identity Architecture
+
+EC2 workloads use Terraform-managed IAM roles and instance profiles.
+
+The initial workload IAM role trusts only the Amazon EC2 service and begins
+without managed or inline identity-based permission policies. The associated
+instance profile provides the mechanism for assigning the role to a future EC2
+instance.
+
+AWS service permissions are introduced explicitly only when a documented
+workload dependency requires them. This separates workload identity from
+authorization and establishes a least-privilege starting point for future
+workloads.
+
 ## Development Toolchain
 
 The primary development workflow is:
