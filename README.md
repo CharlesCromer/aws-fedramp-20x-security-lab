@@ -27,6 +27,9 @@ Workload identity follows the same principle. IAM roles are created without
 identity-based permissions by default, and AWS service access is introduced
 only when a documented workload dependency justifies it.
 
+The initial EC2 workload combines these controls in a private, non-publicly
+addressed deployment with IMDSv2 enforcement and encrypted storage.
+
 ## Primary Framework Alignment
 
 The project primarily demonstrates alignment to:

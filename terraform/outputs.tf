@@ -38,3 +38,17 @@ output "private_workload_instance_profile_name" {
   description = "Name of the IAM instance profile for private workloads"
   value       = aws_iam_instance_profile.private_workload.name
 }
+output "private_workload_instance_id" {
+  description = "ID of the private EC2 workload"
+  value       = aws_instance.private_workload.id
+}
+
+output "private_workload_private_ip" {
+  description = "Private IPv4 address of the private EC2 workload"
+  value       = aws_instance.private_workload.private_ip
+}
+
+output "private_workload_availability_zone" {
+  description = "Availability Zone of the private EC2 workload"
+  value       = aws_instance.private_workload.availability_zone
+}

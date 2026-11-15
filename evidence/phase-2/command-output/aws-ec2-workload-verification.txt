@@ -1,0 +1,45 @@
+=== EC2 INSTANCE BASELINE ===
+{
+    "InstanceId": "i-0f9d9d0952bf2d5f5",
+    "State": "running",
+    "ImageId": "ami-0b71756f4d851f798",
+    "InstanceType": "t3a.micro",
+    "AvailabilityZone": "us-east-1a",
+    "VpcId": "vpc-082fe7b98067401d7",
+    "SubnetId": "subnet-0039527c8b795d6e0",
+    "PrivateIp": "10.30.10.178",
+    "PublicIp": null,
+    "SecurityGroupIds": [
+        "sg-0f9e8a7c78ea1b8a3"
+    ],
+    "KeyName": null,
+    "IamProfileId": "AIPATVCSN3Y4O7THLCWIP",
+    "MetadataHttpEndpoint": "enabled",
+    "MetadataHttpTokens": "required",
+    "MetadataHopLimit": 1,
+    "MetadataTags": "disabled",
+    "Monitoring": "disabled",
+    "RootDeleteOnTermination": true,
+    "RootVolumeId": "vol-05c88ddc21d5f25fd"
+}
+=== CPU CREDIT MODE ===
+{
+    "InstanceId": "i-0f9d9d0952bf2d5f5",
+    "CpuCredits": "standard"
+}
+=== ROOT EBS VOLUME ===
+{
+    "VolumeId": "vol-05c88ddc21d5f25fd",
+    "State": "in-use",
+    "VolumeType": "gp3",
+    "SizeGiB": 8,
+    "Encrypted": true
+}
+=== EXPECTED INSTANCE PROFILE ===
+{
+    "InstanceProfileName": "aws-fedramp-20x-security-lab-lab-private-workload-profile",
+    "InstanceProfileId": "AIPATVCSN3Y4O7THLCWIP",
+    "Roles": [
+        "aws-fedramp-20x-security-lab-lab-private-workload-role"
+    ]
+}

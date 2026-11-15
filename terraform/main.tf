@@ -130,3 +130,43 @@ resource "aws_iam_instance_profile" "private_workload" {
     Name = "${var.project_name}-${var.environment}-private-workload-profile"
   }
 }
+
+# Private EC2 workload baseline.
+# This workload combines the private subnet, default-deny security group,
+# and default-deny IAM identity established in earlier Phase 2 milestones.
+resource "aws_instance" "private_workload" {
+  ami           = "ami-0b71756f4d851f798"
+  instance_type = "t3a.micro"
+
+  subnet_id                   = aws_subnet.private_a.id
+  vpc_security_group_ids      = [aws_security_group.private_workload.id]
+  iam_instance_profile        = aws_iam_instance_profile.private_workload.name
+  associate_public_ip_address = false
+
+  monitoring = false
+
+  # Require IMDSv2 and retain the default one-hop metadata boundary.
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 1
+    instance_metadata_tags      = "disabled"
+  }
+
+  # T3/T3a instances normally use Unlimited mode by default.
+  # Standard mode prevents surplus CPU-credit charges.
+  credit_specification {
+    cpu_credits = "standard"
+  }
+
+  root_block_device {
+    volume_type           = "gp3"
+    volume_size           = 8
+    encrypted             = true
+    delete_on_termination = true
+  }
+
+  tags = {
+    Name = "${var.project_name}-${var.environment}-private-workload"
+  }
+}

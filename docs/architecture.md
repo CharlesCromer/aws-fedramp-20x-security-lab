@@ -39,6 +39,21 @@ workload dependency requires them. This separates workload identity from
 authorization and establishes a least-privilege starting point for future
 workloads.
 
+## Private Workload Architecture
+
+The initial EC2 workload combines the project's private networking,
+default-deny security group, and least-privilege IAM identity.
+
+The workload receives no public IPv4 address and begins with no permitted
+inbound or outbound security-group traffic. Its IAM instance profile provides
+workload identity without initially granting AWS service permissions.
+
+IMDSv2 is required for instance metadata access, and the root EBS volume is
+encrypted and configured for deletion when the workload is terminated.
+
+Additional connectivity and permissions will be introduced only as documented
+workload requirements are added.
+
 ## Development Toolchain
 
 The primary development workflow is:

@@ -216,3 +216,36 @@ to access AWS services or resources.
 
 This restriction is intentional. Permissions will be added narrowly as
 documented workload requirements are introduced.
+
+---
+
+## Decision 011 — Private EC2 Workload Baseline
+
+**Status:** Accepted
+
+The initial EC2 workload will be deployed as a private, default-deny workload
+and will combine the network and identity controls established during earlier
+Phase 2 milestones.
+
+The workload will:
+
+- Reside in a private subnet.
+- Receive no public IPv4 address.
+- Use the project's default-deny workload security group.
+- Use the default-deny workload IAM instance profile.
+- Require IMDSv2 for instance metadata access.
+- Use an encrypted root EBS volume.
+- Delete the root volume when the instance is terminated.
+- Use no SSH key pair initially.
+- Use no startup user data initially.
+
+The workload will therefore begin without inbound network access, outbound
+network access, or identity-based permissions to AWS services.
+
+This isolation is intentional. Network connectivity and AWS permissions will
+be introduced only when documented workload dependencies justify them.
+
+The purpose of this baseline is to demonstrate that workload deployment does
+not automatically imply network exposure or broad authorization. Security
+dependencies will instead be introduced incrementally and managed through
+Infrastructure as Code.
