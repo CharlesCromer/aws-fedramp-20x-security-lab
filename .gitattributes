@@ -1,0 +1,27 @@
+# Cross-Framework Continuous Security Assurance Project
+#
+# Standardize line endings for security validation,
+# evidence integrity, and cross-platform CI/CD execution.
+
+# Infrastructure-as-Code
+*.tf       text eol=lf
+*.tfvars   text eol=lf
+
+# Policy-as-Code
+*.rego     text eol=lf
+
+# Machine-readable evidence and configuration
+*.json     text eol=lf
+*.yaml     text eol=lf
+*.yml      text eol=lf
+
+# Automation scripts
+*.ps1      text eol=lf
+*.sh       text eol=lf
+*.py       text eol=lf
+
+# Binary evidence artifacts
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.pdf      binary

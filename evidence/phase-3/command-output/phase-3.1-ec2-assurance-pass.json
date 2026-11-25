@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "project": "Cross-Framework Continuous Security Assurance",
+  "evidence_type": "terraform_plan_validation",
+  "evidence_description": "Validation of proposed infrastructure configuration. Does not establish deployed-state compliance.",
+  "generated_at_utc": "2026-11-25T22:45:45.2903871Z",
+  "tools": {
+    "terraform_version": "1.16.4",
+    "terraform_plan_format": "1.2",
+    "opa_version": "1.22.4"
+  },
+  "provenance": {
+    "input": {
+      "filename": "phase-3.1-ec2-plan-input.json",
+      "sha256": "4b4f30863e2c94c64815edf083adae719fa88c3f2507be52944b4f7100df87b1"
+    },
+    "policy": {
+      "filename": "ec2_security.rego",
+      "sha256": "b155d0cddc7c5814a2c10d5fd85e33943f3dbdd7980434aa38369276dd46e0e3",
+      "query": "data.terraform.aws.ec2.report"
+    }
+  },
+  "validation": {
+    "allow": true,
+    "evaluation_scope": "terraform_proposed_state",
+    "policy": "terraform.aws.ec2",
+    "results": [
+      {
+        "actual": false,
+        "attribute": "associate_public_ip_address",
+        "category": "network_security",
+        "description": "EC2 public IPv4 assignment must be disabled.",
+        "expected": false,
+        "policy_id": "EC2-001",
+        "resource": "aws_instance.private_workload",
+        "status": "PASS"
+      },
+      {
+        "actual": "required",
+        "attribute": "metadata_options.http_tokens",
+        "category": "metadata_security",
+        "description": "EC2 instances must enforce IMDSv2.",
+        "expected": "required",
+        "policy_id": "EC2-002",
+        "resource": "aws_instance.private_workload",
+        "status": "PASS"
+      },
+      {
+        "actual": true,
+        "attribute": "root_block_device.encrypted",
+        "category": "data_protection",
+        "description": "Root EBS volumes must be encrypted.",
+        "expected": true,
+        "policy_id": "EC2-003",
+        "resource": "aws_instance.private_workload",
+        "status": "PASS"
+      },
+      {
+        "actual": true,
+        "attribute": "root_block_device.delete_on_termination",
+        "category": "resource_lifecycle",
+        "description": "Root EBS volumes must be deleted on termination.",
+        "expected": true,
+        "policy_id": "EC2-004",
+        "resource": "aws_instance.private_workload",
+        "status": "PASS"
+      },
+      {
+        "actual": "standard",
+        "attribute": "credit_specification.cpu_credits",
+        "category": "cost_governance",
+        "description": "T3 and T3a instances must use standard CPU credits.",
+        "expected": "standard",
+        "policy_id": "EC2-005",
+        "resource": "aws_instance.private_workload",
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS",
+    "summary": {
+      "failed": 0,
+      "indeterminate": 0,
+      "passed": 5,
+      "total": 5
+    }
+  }
+}

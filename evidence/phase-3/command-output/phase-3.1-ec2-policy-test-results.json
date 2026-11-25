@@ -1,0 +1,232 @@
+[
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 132,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_compliant_ec2",
+    "duration": 2014200
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 373,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_non_t3_instance_excludes_cpu_credit_check",
+    "duration": 1431900
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 219,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_ec2_005_unlimited_cpu_credits",
+    "duration": 1431900
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 299,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_unknown_parent_configuration_block",
+    "duration": 1431900
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 171,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_ec2_002_imdsv1_permitted",
+    "duration": 2050900
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 160,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_ec2_001_public_ipv4_enabled",
+    "duration": 3482800
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 496,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_unchanged_resource_evaluated",
+    "duration": 4065100
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 269,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_missing_required_attribute",
+    "duration": 2050900
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 337,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_incomplete_plan",
+    "duration": 1001000
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 203,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_ec2_004_delete_on_termination_disabled",
+    "duration": 3051900
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 329,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_invalid_plan_input",
+    "duration": 0
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 236,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_all_five_requirements_violated",
+    "duration": 1001000
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 348,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_errored_plan",
+    "duration": 0
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 307,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_unknown_entire_resource_configuration",
+    "duration": 0
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 281,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_unknown_required_attribute",
+    "duration": 2002000
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 289,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_unknown_nested_attribute",
+    "duration": 1001000
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 359,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_no_applicable_ec2_resources",
+    "duration": 999100
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 423,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_multiple_ec2_resources",
+    "duration": 2000100
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 411,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_unknown_instance_type",
+    "duration": 999100
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 462,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_delete_only_resource_excluded",
+    "duration": 1633600
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 397,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_t3_instance_requires_standard_credits",
+    "duration": 3139200
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 479,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_replacement_resource_evaluated",
+    "duration": 1139100
+  },
+  {
+    "location": {
+      "file": "policies\\ec2_security_test.rego",
+      "row": 187,
+      "col": 1
+    },
+    "package": "data.terraform.aws.ec2_test",
+    "name": "test_ec2_003_root_ebs_unencrypted",
+    "duration": 6744100
+  }
+]

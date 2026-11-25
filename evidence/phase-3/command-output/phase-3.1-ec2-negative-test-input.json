@@ -1,0 +1,103 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.16.4",
+  "complete": true,
+  "errored": false,
+  "resource_changes": [
+    {
+      "address": "aws_instance.private_workload",
+      "mode": "managed",
+      "type": "aws_instance",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "instance_type": "t3a.micro",
+          "associate_public_ip_address": true,
+          "metadata_options": [
+            {
+              "http_tokens": "optional"
+            }
+          ],
+          "root_block_device": [
+            {
+              "encrypted": false,
+              "delete_on_termination": false
+            }
+          ],
+          "credit_specification": [
+            {
+              "cpu_credits": "unlimited"
+            }
+          ]
+        },
+        "after_unknown": {
+          "arn": true,
+          "availability_zone": true,
+          "capacity_reservation_specification": true,
+          "cpu_options": true,
+          "credit_specification": [
+            {}
+          ],
+          "disable_api_stop": true,
+          "disable_api_termination": true,
+          "ebs_block_device": true,
+          "ebs_optimized": true,
+          "enable_primary_ipv6": true,
+          "enclave_options": true,
+          "ephemeral_block_device": true,
+          "host_id": true,
+          "host_resource_group_arn": true,
+          "id": true,
+          "instance_initiated_shutdown_behavior": true,
+          "instance_lifecycle": true,
+          "instance_market_options": true,
+          "instance_state": true,
+          "ipv6_address_count": true,
+          "ipv6_addresses": true,
+          "key_name": true,
+          "launch_template": [],
+          "maintenance_options": true,
+          "metadata_options": [
+            {}
+          ],
+          "network_interface": true,
+          "outpost_arn": true,
+          "password_data": true,
+          "placement_group": true,
+          "placement_group_id": true,
+          "placement_partition_number": true,
+          "primary_network_interface": true,
+          "primary_network_interface_id": true,
+          "private_dns": true,
+          "private_dns_name_options": true,
+          "private_ip": true,
+          "public_dns": true,
+          "public_ip": true,
+          "root_block_device": [
+            {
+              "device_name": true,
+              "iops": true,
+              "kms_key_id": true,
+              "tags_all": true,
+              "throughput": true,
+              "volume_id": true
+            }
+          ],
+          "secondary_network_interface": true,
+          "secondary_private_ips": true,
+          "security_groups": true,
+          "spot_instance_request_id": true,
+          "tags": {},
+          "tags_all": {},
+          "tenancy": true,
+          "user_data_base64": true,
+          "vpc_security_group_ids": [
+            false
+          ]
+        }
+      }
+    }
+  ]
+}
