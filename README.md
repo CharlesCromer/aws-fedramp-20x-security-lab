@@ -1,4 +1,8 @@
-﻿# AWS FedRAMP 20x Security Lab (Still In Progress)
+﻿# Cross-Framework Continuous Security Assurance Project (Still In Progress)
+
+## Automating Security Validation & Reusable Compliance Evidence
+
+### Build Once. Validate Continuously. Demonstrate Across Frameworks.
 
 A hands-on cloud security engineering and compliance portfolio project combining:
 
